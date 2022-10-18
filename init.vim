@@ -8,11 +8,13 @@ set nowrap
 " set cursorline
 set colorcolumn=80
 
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
+" set softtabstop=2
 set shiftround
-
+set autoindent
+	
 set hidden
 
 set ignorecase
@@ -26,9 +28,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'NoahTheDuke/vim-just'
+	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
-colorscheme srcery
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+lua require("catppuccin").setup()
+colorscheme catppuccin
 
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <A-f> :Rg<CR>
