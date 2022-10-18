@@ -26,9 +26,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'NoahTheDuke/vim-just'
+	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-colorscheme srcery
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+lua require("catppuccin").setup()
+colorscheme catppuccin
+" colorscheme srcery
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <A-f> :Rg<CR>
