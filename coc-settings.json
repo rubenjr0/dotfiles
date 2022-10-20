@@ -1,1 +1,5 @@
-{"rust-analyzer.server.path": "/home/mega/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer"}
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes":  ["*"],
+  "rust-analyzer.server.path": "/home/rubenjr/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer"
+}
