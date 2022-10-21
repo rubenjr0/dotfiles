@@ -1,48 +1,62 @@
-set title
+" set title
 set number
 set relativenumber
+set termguicolors
 " set mouse=a
-
 set nowrap
-
 " set cursorline
-set colorcolumn=80
-
+" set colorcolumn=80
 set expandtab
 set tabstop=2
 set shiftwidth=2
 " set softtabstop=2
 set shiftround
 set autoindent
-	
 set hidden
-
 set ignorecase
 set smartcase
-
 set spelllang=en,es
 
 call plug#begin('~/.vim/plugged')
-	Plug 'junegunn/vim-easy-align'
+  " Plug 'feline-nvim/feline.nvim'
+  Plug 'itchyny/lightline.vim'
 	Plug 'srcery-colors/srcery-vim'
-	Plug 'junegunn/fzf.vim'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'NoahTheDuke/vim-just'
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+  Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-lua require("catppuccin").setup()
+
+lua require("catppuccin").setup({barbar = true, coc_nvim = true, telescope = true})
+lua require("toggleterm").setup()
+
 colorscheme catppuccin
+let g:lightline = {'colorscheme': 'catppuccin'}
 " colorscheme srcery
 
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <A-f> :Rg<CR>
+noremap <F1> :Telescope find_files<cr>
+noremap <F2> :Telescope buffers<cr>
+nnoremap <silent> <A-<> :ToggleTerm<CR>
 
-let g:ale_linters = { 'rust': ['analyzer'] }
-let g:ale_completion_enabled = 1
-
-map <F2> :NERDTreeToggle<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-left> <Cmd>BufferPrevious<CR>
+nnoremap <silent>    <A-right> <Cmd>BufferNext<CR>
+nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
+nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
+nnoremap <silent>    <A-3> <Cmd>BufferGoto 3<CR>
+nnoremap <silent>    <A-4> <Cmd>BufferGoto 4<CR>
+nnoremap <silent>    <A-5> <Cmd>BufferGoto 5<CR>
+nnoremap <silent>    <A-6> <Cmd>BufferGoto 6<CR>
+nnoremap <silent>    <A-7> <Cmd>BufferGoto 7<CR>
+nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
+nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
+nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
+nnoremap <silent>    <A-q> <Cmd>BufferClose<CR>
