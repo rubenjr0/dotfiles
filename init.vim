@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'srcery-colors/srcery-vim'
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
@@ -32,10 +31,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-
 lua require("catppuccin").setup({barbar = true, coc_nvim = true, telescope = true})
 lua require("toggleterm").setup()
-
 colorscheme catppuccin
 let g:lightline = {'colorscheme': 'catppuccin'}
 " colorscheme srcery
