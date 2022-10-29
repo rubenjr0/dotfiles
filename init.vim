@@ -1,4 +1,4 @@
-" set title
+set title
 set number
 set relativenumber
 set termguicolors
@@ -16,28 +16,40 @@ set hidden
 set ignorecase
 set smartcase
 set spelllang=en,es
+:set so=999
 
 call plug#begin('~/.vim/plugged')
   " Plug 'feline-nvim/feline.nvim'
   Plug 'itchyny/lightline.vim'
 	Plug 'srcery-colors/srcery-vim'
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
+  Plug 'folke/noice.nvim'
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'wbthomason/packer.nvim' 
+  Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
+lua require'lspconfig'.rust_analyzer.setup({})
+
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-lua require("catppuccin").setup({barbar = true, coc_nvim = true, telescope = true})
+let g:lightline = {'colorscheme': 'catppuccin'}
+lua require("noice").setup()
+lua require("catppuccin").setup({barbar = true, coc_nvim = true, telescope = true, noice = true})
 lua require("toggleterm").setup()
 colorscheme catppuccin
-let g:lightline = {'colorscheme': 'catppuccin'}
+
 " colorscheme srcery
 
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use K to show documentation in preview window.
+" nnoremap <silent> <A-d> :call ShowDocumentation()<CR>
 
 noremap <F1> :Telescope find_files<cr>
 noremap <F2> :Telescope buffers<cr>
