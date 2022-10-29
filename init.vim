@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'romgrk/barbar.nvim'
+  Plug 'NoahTheDuke/vim-just'
 call plug#end()
 
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
