@@ -14,7 +14,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'MunifTanjim/nui.nvim'
   Plug 'wbthomason/packer.nvim' 
   Plug('neoclide/coc.nvim', {branch = 'release'})
+  Plug 'lervag/vimtex'
 vim.call('plug#end')
+
+vim.g.tex_flavor = 'latex'
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_quickfix_mode = 0
+vim.opt.conceallevel = 1
+vim.g.tex_conceal = 'abdmg'
 
 require('catppuccin').setup {
   flavour = 'mocha',
