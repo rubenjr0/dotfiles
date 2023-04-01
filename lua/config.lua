@@ -1,6 +1,7 @@
 vim.opt.title = true
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.numberwidth = 4
 vim.opt.guicursor = 'i:ver25'
 vim.opt.termguicolors = true
 
@@ -22,7 +23,7 @@ vim.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8 -- or 16
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'no'
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50

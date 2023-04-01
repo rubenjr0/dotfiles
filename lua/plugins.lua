@@ -1,5 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
+require("catppuccin").setup({
+    integrations = {
+        harpoon = true,
+        mason = true,
+        telescope = true,
+    }
+})
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -34,3 +42,5 @@ return require('packer').startup(function(use)
   }
 }
 end)
+
+
