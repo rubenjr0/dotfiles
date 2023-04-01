@@ -1,40 +1,36 @@
-local Plug = vim.fn['plug#']
+vim.cmd [[packadd packer.nvim]]
 
-vim.call('plug#begin', '~/.config/nvim/plugged')
-  Plug 'itchyny/lightline.vim'
-  Plug 'srcery-colors/srcery-vim'
-  Plug('catppuccin/nvim', {as = 'catppuccin'})
-  Plug 'nvim-lua/plenary.nvim'
-  Plug('nvim-telescope/telescope.nvim', {tag = '-1.1.0'})
-  -- Plug('akinsho/toggleterm.nvim', {tag = '*'})
-  Plug 'kyazdani41/nvim-web-devicons'
-  Plug 'romgrk/barbar.nvim'
-  Plug 'NoahTheDuke/vim-just'
-  Plug 'folke/noice.nvim'
-  Plug 'MunifTanjim/nui.nvim'
-  Plug 'wbthomason/packer.nvim' 
-  Plug('neoclide/coc.nvim', {branch = 'release'})
-  Plug 'lervag/vimtex'
-vim.call('plug#end')
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+  use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	  -- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } )
+  use('theprimeagen/harpoon')
+  use('mbbill/undotree')
+  use('tpope/vim-fugitive')
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v2.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},             -- Required
+		  {                                      -- Optional
+		  'williamboman/mason.nvim',
+		  run = function()
+			  pcall(vim.cmd, 'MasonUpdate')
+		  end,
+	  },
+	  {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-vim.g.tex_flavor = 'latex'
-vim.g.vimtex_view_method = 'zathura'
-vim.g.vimtex_quickfix_mode = 0
-vim.opt.conceallevel = 1
-vim.g.tex_conceal = 'abdmg'
-
-require('catppuccin').setup {
-  flavour = 'mocha',
-  integrations = {
-    barbar = true,
-    telescope = true,
-    noice = true
+	  -- Autocompletion
+	  {'hrsh7th/nvim-cmp'},     -- Required
+	  {'hrsh7th/cmp-nvim-lsp'}, -- Required
+	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
-
-vim.cmd('colorscheme catppuccin')
-
-vim.g.lightline = {colorscheme = 'catppuccin'}
-
-require('noice').setup()
-
+end)

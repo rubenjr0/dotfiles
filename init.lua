@@ -1,4 +1,5 @@
 require('config')
 require('plugins')
-require('shortcuts')
-require('coc')
+require('remaps')
+-- require('shortcuts')
+-- require('coc')
