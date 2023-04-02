@@ -1,3 +1,7 @@
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.title = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -27,7 +31,7 @@ vim.opt.signcolumn = 'no'
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.opt.hidden = true
 vim.opt.ignorecase = true

@@ -1,5 +1,7 @@
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 
+vim.g.lightline = { colorscheme = 'catppuccin' }
+
 function ColorMyPencils(color)
 	color = color or "catppuccin-mocha"
 	vim.cmd.colorscheme(color)
