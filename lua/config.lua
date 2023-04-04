@@ -8,10 +8,11 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.guicursor = 'i:ver25'
 vim.opt.termguicolors = true
+vim.opt.encoding='utf8'
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 8
+vim.opt.shiftwidth = 8
 vim.opt.expandtab = true
 
 vim.opt.smartcase = true
