@@ -10,9 +10,9 @@ vim.opt.guicursor = 'i:ver25'
 vim.opt.termguicolors = true
 vim.opt.encoding='utf8'
 
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 8
-vim.opt.shiftwidth = 8
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartcase = true
@@ -39,7 +39,7 @@ vim.opt.ignorecase = true
 vim.opt.spelllang = {"en", "es"}
 -- vim.opt.so = 999
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.formatoptions:append("l")
 vim.opt.linebreak = true

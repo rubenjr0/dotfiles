@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
     use 'm4xshen/autoclose.nvim'
     use 'lervag/vimtex'
     use 'itchyny/lightline.vim'
+    use 'NoahTheDuke/vim-just'
+    use 'IndianBoy42/tree-sitter-just'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
@@ -24,6 +26,11 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use 'neovim/nvim-lspconfig'
+    use 'simrat39/rust-tools.nvim'
+    -- Debugging
+    use 'nvim-lua/plenary.nvim'
+    use 'mfussenegger/nvim-dap'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

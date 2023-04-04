@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["inlay-hints.nvim"] = {
+    loaded = true,
+    path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
+    url = "https://github.com/simrat39/inlay-hints.nvim"
+  },
   ["lightline.vim"] = {
     loaded = true,
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/lightline.vim",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -155,6 +165,11 @@ _G.packer_plugins = {
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["startup.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0" },
     loaded = true,
@@ -166,6 +181,11 @@ _G.packer_plugins = {
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tree-sitter-just"] = {
+    loaded = true,
+    path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/tree-sitter-just",
+    url = "https://github.com/IndianBoy42/tree-sitter-just"
+  },
   undotree = {
     loaded = true,
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/undotree",
@@ -175,6 +195,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-just"] = {
+    loaded = true,
+    path = "/home/rubenjr/.local/share/nvim/site/pack/packer/start/vim-just",
+    url = "https://github.com/NoahTheDuke/vim-just"
   },
   vimtex = {
     loaded = true,

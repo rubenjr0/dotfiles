@@ -1,11 +1,12 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-	'rust_analyzer',
 	'ruff_lsp'
 })
+
+lsp.skip_server_setup({'rust_analyzer'})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -13,7 +14,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings {
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 	['<cr>'] = cmp.mapping.confirm({ select = true }),
-	['<leader><cr>'] = cmp.mapping.complete()
+	['<c-cr>'] = cmp.mapping.complete()
 }
 
 lsp.setup_nvim_cmp({
@@ -28,3 +29,13 @@ end)
 
 
 lsp.setup()
+
+local rust_tools = require('rust-tools')
+
+rust_tools.setup({
+    server = {
+        on_attach = function()
+            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
+        end
+    }
+})
