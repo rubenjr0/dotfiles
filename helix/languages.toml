@@ -1,1 +1,33 @@
-/home/rubenjr/.config/helix/languages.toml
+[[language]]
+name = "latex"
+
+[language-server.texlab.config.texlab.build]
+onSave = true
+forwardSearchAfter = true
+
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "zathura"
+args = [ "--synctex-forward", "%l:1:%f", "%p" ]
+
+[language-server.texlab.config.texlab.chktex]
+onEdit = true
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+roots = []
+file-types = ["typst", "typ"]
+indent = { tab-width = 2, unit = "  " }
+comment-token = "//"
+injection-regex = "typ(st)?"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'$' = '$'
+'"' = '"'
+
+[[grammar]]
+name = "typst"
+source = { path = "/home/rubenjr/.helix/typst_grammar/" }

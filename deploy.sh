@@ -1,6 +1,6 @@
 cp -r helix ~/.config/
-cp -r kitty ~/.config/
-cp -r zathura ~/.config/
+cp kitty.conf ~/.config/kitty/
+cp zathurarc ~/.config/zathura
 cp -r zellij ~/.config/
 
 cp zsh ~/.zshrc
