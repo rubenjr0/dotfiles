@@ -2,18 +2,18 @@ set adjust-open "best-fit"
 set scroll-page-aware "true"
 set guioptions ""
 
-set default-fg              "#FFFFFF"
-set default-bg 			  	"#111111"
+set default-fg              "#DEDEDE"
+set default-bg 			  	"#000000"
 
-set completion-bg		    "#000000"
-set completion-fg		    "#FFFF55"
+set completion-bg		    "#929292"
+set completion-fg		    "#121212"
 
-set statusbar-fg		    "#FFFFFF"
-set statusbar-bg		    "#222222"
+set statusbar-fg		    "#121212"
+set statusbar-bg		    "#929292"
 
 set recolor
 
 set recolor-keephue
-set recolor-lightcolor		"#000000"
-set recolor-darkcolor		"#FFFFFF"
+set recolor-lightcolor		"#121212"
+set recolor-darkcolor		"#DEDEDE"
 
