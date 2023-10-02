@@ -1,0 +1,45 @@
+# inherits = "default"
+
+"ui.background" = "background"
+"ui.text" = "foreground"
+"ui.cursor" = { bg = "red", fg = "background" }
+"ui.cursor.match" = "red"
+"ui.selection" = { bg = "foreground", fg = "background" }
+
+"ui.gutter" = "foreground" 
+"ui.statusline" = { bg = "foreground", fg = "background" }
+"ui.statusline.separator" = "cyan"
+
+"warning" = "yellow"
+"error" = "red"
+"info" = "blue"
+"hint" = "green"
+
+"keyword" = "blue"
+"function" = "yellow"
+"constant" = "blue"
+"operator" = "red"
+"string" = "blue"
+"comment" = "gray"
+
+[palette]
+black = "#1F1F20"
+red = "#FB055A"
+green = "#26FFD4"
+yellow = "#FDAA5A"
+blue = "#5C9FFF"
+magenta = "#FC59A6"
+cyan = "#26FFD4"
+white = "#F0F0F0"
+
+gray = "#5C6370"
+light-red = "#FB055A"
+light-green = "#26FFD4"
+light-yellow = "#FEBE7E"
+light-blue = "#55ADFF"
+light-magenta = "#FD95D0"
+light-cyan = "#26FFD4"
+light-gray = "#5C6370"
+
+background = "#1D1E20"
+foreground = "#F0F0F0"
