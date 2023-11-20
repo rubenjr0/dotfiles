@@ -1,0 +1,16 @@
+themes {
+   tender {
+        fg "#EEEEEE"
+        bg "#282828"
+        black "#1D1D1D"
+        red "#C5152F"
+        green "#C9D05C"
+        yellow "#FFC24B"
+        blue "#B3DEEF"
+        magenta "#D3B987"
+        cyan "#73CEF4"
+        white "#EEEEEE"
+        orange "#FACC72"
+    }
+}
+
