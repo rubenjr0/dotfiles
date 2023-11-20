@@ -273,6 +273,7 @@ alias vim=nvim
 alias v=nvim
 alias tec=tectonic -X
 alias typ=typst
+alias zola="flatpak run org.getzola.zola"
 alias ls='exa --group-directories-first'
 alias l='exa -l --group-directories-first --git'
 alias la='exa -l --all --group-directories-first --git'
@@ -293,3 +294,13 @@ export REBAR_PATH="/home/rubenjr/.cache/rebar3/bin"
 export PATH="$PATH:$REBAR_PATH:$TECTONIC_PATH:$NIM_HOME:$DENO_INSTALL:$JAVA_HOME:$LOCAL_BIN"
 
 [ -f "/home/rubenjr/.ghcup/env" ] && source "/home/rubenjr/.ghcup/env" # ghcup-env
+# Turso
+export PATH="/home/rubenjr/.turso:$PATH"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
