@@ -301,19 +301,19 @@ export TECTONIC_PATH="$HOME/.tectonic"
 export CARGO_PATH="$HOME/.cargo/bin"
 export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
 
-[ -f "/home/rubenjr/.ghcup/env" ] && source "/home/rubenjr/.ghcup/env" # ghcup-env
+[ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
 # opam configuration
-[[ ! -r /home/rubenjr0/.opam/opam-init/init.zsh ]] || source /home/rubenjr0/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/$USER/.opam/opam-init/init.zsh ]] || source /home/$USER/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
 
-path=('/home/rubenjr0/.juliaup/bin' $path)
+path=('/home/$USER/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
