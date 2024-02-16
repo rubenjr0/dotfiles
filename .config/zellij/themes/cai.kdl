@@ -1,0 +1,16 @@
+themes {
+   cai {
+        fg "#D9E6F2"
+        bg "#09111A"
+        black "#000000"
+        red "#E98DA3"
+        green "#A3E98D"
+        yellow "#E9D48D"
+        blue "#8DA3E9"
+        magenta "#D48DE9"
+        cyan "#27CAA4"
+        white "#FFFFFF"
+        orange "#CAA427"
+    }
+}
+

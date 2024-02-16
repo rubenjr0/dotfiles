@@ -261,6 +261,17 @@ if [[ -o zle ]]; then
 fi
 # ZOXIDE END
 
+# YAZI BEGIN
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+# YAZI END
+
 if type rg &> /dev/null; then
 	export FZF_DEFAULT_COMMAND='rg --files'
 	export FZF_DEFAULT_OPTS='-m --height 50% --border'
@@ -273,6 +284,7 @@ alias vim=nvim
 alias v=nvim
 alias tec=tectonic -X
 alias typ=typst
+alias xc=xcompress
 alias ls='exa --group-directories-first'
 alias l='exa -l --group-directories-first --git'
 alias la='exa -l --all --group-directories-first --git'
@@ -281,15 +293,27 @@ alias j=just
 alias py=python3
 alias z=zellij
 alias k=kalendar
-alias xd='cd $(xplr)'
 alias rars='java -jar $HOME/.local/bin/rars.jar'
 
-export DENO_INSTALL="$HOME/.deno/bin"
 export JAVA_HOME="/opt/jdk-17.0.6+10/bin"
-export NIM_PATH="$HOME/.nimble/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
-export REBAR_PATH="/home/rubenjr/.cache/rebar3/bin"
-export PATH="$PATH:$REBAR_PATH:$TECTONIC_PATH:$NIM_HOME:$DENO_INSTALL:$JAVA_HOME:$LOCAL_BIN"
+export CARGO_PATH="$HOME/.cargo/bin"
+export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
 
 [ -f "/home/rubenjr/.ghcup/env" ] && source "/home/rubenjr/.ghcup/env" # ghcup-env
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+# opam configuration
+[[ ! -r /home/rubenjr0/.opam/opam-init/init.zsh ]] || source /home/rubenjr0/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/rubenjr0/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
