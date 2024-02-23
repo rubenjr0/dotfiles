@@ -261,6 +261,17 @@ if [[ -o zle ]]; then
 fi
 # ZOXIDE END
 
+# YAZI BEGIN
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+# YAZI END
+
 if type rg &> /dev/null; then
 	export FZF_DEFAULT_COMMAND='rg --files'
 	export FZF_DEFAULT_OPTS='-m --height 50% --border'
