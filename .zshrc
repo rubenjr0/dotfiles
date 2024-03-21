@@ -302,6 +302,7 @@ export NIM_PATH="$HOME/.nimble/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
 export REBAR_PATH="/home/rubenjr/.cache/rebar3/bin"
+export CHROME_BIN="brave-browser"
 export PATH="$PATH:$REBAR_PATH:$TECTONIC_PATH:$NIM_HOME:$DENO_INSTALL:$JAVA_HOME:$LOCAL_BIN"
 
 [ -f "/home/rubenjr/.ghcup/env" ] && source "/home/rubenjr/.ghcup/env" # ghcup-env
