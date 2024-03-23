@@ -8,22 +8,12 @@ set recolor-reverse-video
 set default-fg                "#CDD6F4"
 set default-bg 			          "#11111b"
 
-set completion-bg		          "#313244"
-set completion-fg		          "#CDD6F4"
-set completion-highlight-bg	  "#575268"
-set completion-highlight-fg	  "#CDD6F4"
-set completion-group-bg		    "#313244"
-set completion-group-fg		    "#89B4FA"
+set recolor
 
-set statusbar-fg		          "#CDD6F4"
-set statusbar-bg		          "#313244"
+set recolor-keephue
+set recolor-lightcolor		"#282828"
+set recolor-darkcolor		"#EEEEEE"
 
-set notification-bg		        "#313244"
-set notification-fg		        "#CDD6F4"
-set notification-error-bg	    "#313244"
-set notification-error-fg	    "#F38BA8"
-set notification-warning-bg	  "#313244"
-set notification-warning-fg	  "#FAE3B0"
 
 set inputbar-fg			          "#CDD6F4"
 set inputbar-bg 		          "#313244"

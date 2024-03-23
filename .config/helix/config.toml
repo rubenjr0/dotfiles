@@ -21,7 +21,7 @@ center = ["file-name"]
 right = ["diagnostics", "position", "separator", "file-type"]
 
 [editor.soft-wrap]
-enable = true
+enable = false
 
 [editor.file-picker]
 hidden = false

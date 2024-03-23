@@ -284,7 +284,7 @@ alias vim=nvim
 alias v=nvim
 alias tec=tectonic -X
 alias typ=typst
-alias zola="flatpak run org.getzola.zola"
+alias xc=xcompress
 alias ls='exa --group-directories-first'
 alias l='exa -l --group-directories-first --git'
 alias la='exa -l --all --group-directories-first --git'
@@ -293,26 +293,29 @@ alias j=just
 alias py=python3
 alias z=zellij
 alias k=kalendar
-alias xd='cd $(xplr)'
 alias rars='java -jar $HOME/.local/bin/rars.jar'
 
-export DENO_INSTALL="$HOME/.deno/bin"
 export JAVA_HOME="/opt/jdk-17.0.6+10/bin"
-export NIM_PATH="$HOME/.nimble/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
-export REBAR_PATH="/home/rubenjr/.cache/rebar3/bin"
 export CHROME_BIN="brave-browser"
-export PATH="$PATH:$REBAR_PATH:$TECTONIC_PATH:$NIM_HOME:$DENO_INSTALL:$JAVA_HOME:$LOCAL_BIN"
+export LD_LIBRARY_PATH="/usr/lib/cuda-11.1/lib64"
+export CARGO_PATH="$HOME/.cargo/bin"
+export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
 
-[ -f "/home/rubenjr/.ghcup/env" ] && source "/home/rubenjr/.ghcup/env" # ghcup-env
-# Turso
-export PATH="/home/rubenjr/.turso:$PATH"
-
+[ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# opam configuration
+[[ ! -r /home/$USER/.opam/opam-init/init.zsh ]] || source /home/$USER/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/$USER/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
