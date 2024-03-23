@@ -299,6 +299,7 @@ export JAVA_HOME="/opt/jdk-17.0.6+10/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
 export CARGO_PATH="$HOME/.cargo/bin"
+export LD_LIBRARY_PATH="/usr/lib/cuda-11.1/lib64"
 export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
 
 [ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
