@@ -238,12 +238,12 @@ pane_frames false
 // Default: default
 //
 
-theme "catppuccin-mocha"
+theme "pencil"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

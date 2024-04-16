@@ -261,17 +261,6 @@ if [[ -o zle ]]; then
 fi
 # ZOXIDE END
 
-# YAZI BEGIN
-function ya() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-# YAZI END
-
 if type rg &> /dev/null; then
 	export FZF_DEFAULT_COMMAND='rg --files'
 	export FZF_DEFAULT_OPTS='-m --height 50% --border'
@@ -299,7 +288,7 @@ export JAVA_HOME="/opt/jdk-17.0.6+10/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
 export CHROME_BIN="brave-browser"
-export LD_LIBRARY_PATH="/usr/lib/cuda-11.1/lib64"
+export LD_LIBRARY_PATH="/usr/lib/cuda/lib64"
 export CARGO_PATH="$HOME/.cargo/bin"
 export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
 
@@ -319,3 +308,7 @@ path=('/home/$USER/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
