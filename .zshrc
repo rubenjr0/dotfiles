@@ -267,10 +267,10 @@ if type rg &> /dev/null; then
 fi
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
 
 alias vim=nvim
 alias v=nvim
+alias doc=lazydocker
 alias tec=tectonic -X
 alias typ=typst
 alias xc=xcompress
@@ -282,15 +282,17 @@ alias j=just
 alias py=python3
 alias z=zellij
 alias k=kalendar
-alias rars='java -jar $HOME/.local/bin/rars.jar'
+alias ff=fastfetch
 
-export JAVA_HOME="/opt/jdk-17.0.6+10/bin"
+
+export CUDA_HOME="/usr/local/cuda"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
 export CHROME_BIN="brave-browser"
-export LD_LIBRARY_PATH="/usr/lib/cuda/lib64"
 export CARGO_PATH="$HOME/.cargo/bin"
-export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN"
+export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN:$CUDA_HOME/bin"
 
 [ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
 autoload -Uz compinit
@@ -312,3 +314,7 @@ export PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
+
+# Turso
+export PATH="/home/rubenjr0/.turso:$PATH"

@@ -1,10 +1,15 @@
-theme = "base16_terminal"
+theme = "rose_pine"
 
 [editor]
 line-number = "relative"
 bufferline = "always"
+rulers = [80, 120]
 scrolloff = 8
 cursorline = true
+popup-border = "all"
+preview-completion-insert = false
+completion-replace = false
+completion-trigger-len = 1
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,3 +36,4 @@ render = true
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
