@@ -1,4 +1,3 @@
-
 # Editor
 #
 # Default editor is "vi".
@@ -214,8 +213,8 @@ decorations = "Disabled"
 # "color-automation" - Set a specific color for the tab whenever a specific program is running, or in a specific directory.
 #
 # Example:
-# [navigation]
-# mode = "Plain"
+[navigation]
+mode = "Plain"
 # clickable = true
 # use-current-path = true
 # color-automation = []
