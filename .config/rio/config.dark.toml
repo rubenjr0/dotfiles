@@ -33,7 +33,7 @@ blinking-cursor = true
 # (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
 #
 # Example:
-theme = "rose_pine_dawn"
+theme = "rose_pine"
 
 # Padding-x
 #
