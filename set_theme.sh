@@ -3,6 +3,7 @@
 RIO_CONF="$HOME/.config/rio/config"
 HELIX_CONF="$HOME/.config/helix/config"
 ZELLIJ_CONF="$HOME/.config/zellij/config"
+ZATHURA_CONF="$HOME/.config/zathura"
 
 set_theme() {
   echo "Setting Rio..."
@@ -11,6 +12,9 @@ set_theme() {
   echo "Setting Helix..."
   cp "${HELIX_CONF}.$1.toml" "${HELIX_CONF}.toml"
 
+  echo "Setting Zathura..."
+  cp "${ZATHURA_CONF}/${1}rc" "${ZATHURA_CONF}/zathurarc"
+  
   echo "Setting Zellij..."
   cp "${ZELLIJ_CONF}.$1.kdl" "${ZELLIJ_CONF}.kdl"
 }

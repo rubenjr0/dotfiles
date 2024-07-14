@@ -285,6 +285,8 @@ alias k=kalendar
 alias ff=fastfetch
 
 
+export BAT_THEME="base16"
+
 export CUDA_HOME="/usr/local/cuda"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
