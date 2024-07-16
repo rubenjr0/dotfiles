@@ -33,7 +33,7 @@ blinking-cursor = true
 # (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
 #
 # Example:
-theme = "rose_pine"
+theme = "rose_pine_dawn"
 
 # Padding-x
 #
@@ -99,14 +99,14 @@ padding-x = 10
 # • decorations - Set window decorations, options: "Enabled", "Disabled", "Transparent", "Buttonless"
 #
 # Example:
-[window]
+# [window]
 # width = 600
 # height = 400
 # mode = "Windowed"
 # foreground-opacity = 0.7
 # background-opacity = 0.9
 # blur = true
-decorations = "Disabled"
+# decorations = "Disabled"
 
 # Renderer
 #
