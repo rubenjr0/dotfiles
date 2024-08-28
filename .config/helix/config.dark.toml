@@ -1,4 +1,4 @@
-theme = "rose_pine"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
@@ -8,8 +8,8 @@ scrolloff = 8
 cursorline = true
 popup-border = "all"
 preview-completion-insert = false
-completion-replace = false
-completion-trigger-len = 1
+completion-replace = true
+completion-trigger-len = 3
 
 [editor.cursor-shape]
 insert = "bar"

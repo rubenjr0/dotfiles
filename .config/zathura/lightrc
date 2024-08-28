@@ -1,41 +1,38 @@
-# https://github.com/rose-pine/rose-pine-theme
-# Soho vibes for Zathura: Rosé Pine Dawn
-#
-# Usage:
-# Copy contents of this file to ~/.config/zathura/zathurarc
-#
-# Change 'recolor' and 'recolor-keephue' to true to change
-# the document colors for a more uniform viewing experience.
+set default-fg                rgba(76,79,105,1)
+set default-bg 			          rgba(239,241,245,1)
 
-set default-bg                  "#faf4ed"
-set default-fg                  "#575279"
+set completion-bg		          rgba(204,208,218,1)
+set completion-fg		          rgba(76,79,105,1)
+set completion-highlight-bg	  rgba(87,82,104,1)
+set completion-highlight-fg	  rgba(76,79,105,1)
+set completion-group-bg		    rgba(204,208,218,1)
+set completion-group-fg		    rgba(30,102,245,1)
 
-set statusbar-fg                "#9893a5"
-set statusbar-bg                "#fffaf3"
+set statusbar-fg		          rgba(76,79,105,1)
+set statusbar-bg		          rgba(204,208,218,1)
 
-set inputbar-bg                 "#6e6a86"
-set inputbar-fg                 "#faf4ed"
+set notification-bg		        rgba(204,208,218,1)
+set notification-fg		        rgba(76,79,105,1)
+set notification-error-bg	    rgba(204,208,218,1)
+set notification-error-fg	    rgba(210,15,57,1)
+set notification-warning-bg	  rgba(204,208,218,1)
+set notification-warning-fg	  rgba(250,227,176,1)
 
-set notification-bg             "#6e6a86"
-set notification-fg             "#faf4ed"
+set inputbar-fg			          rgba(76,79,105,1)
+set inputbar-bg 		          rgba(204,208,218,1)
 
-set notification-error-bg       "#6e6a86"
-set notification-error-fg       "#ea9d34"
+set recolor                   "true"
+set recolor-lightcolor		    rgba(239,241,245,1)
+set recolor-darkcolor		      rgba(76,79,105,1)
 
-set notification-warning-bg     "#6e6a86"
-set notification-warning-fg     "#ea9d34"
+set index-fg			            rgba(76,79,105,1)
+set index-bg			            rgba(239,241,245,1)
+set index-active-fg		        rgba(76,79,105,1)
+set index-active-bg		        rgba(204,208,218,1)
 
-set highlight-color             "#b4637a"
-set highlight-active-color      "#d7827e"
+set render-loading-bg		      rgba(239,241,245,1)
+set render-loading-fg		      rgba(76,79,105,1)
 
-set completion-bg               "#6e6a86"
-set completion-fg               "#d7827e"
-
-set completion-highlight-fg     "#575279"
-set completion-highlight-bg     "#d7827e"
-
-set recolor-lightcolor          "#faf4ed"
-set recolor-darkcolor           "#575279"
-
-set recolor                     "true"
-set recolor-keephue             "true"
+set highlight-color		        rgba(87,82,104,0.5)
+set highlight-fg              rgba(234,118,203,0.5)
+set highlight-active-color	  rgba(234,118,203,0.5)

@@ -284,19 +284,8 @@ alias z=zellij
 alias k=kalendar
 alias ff=fastfetch
 
-
 export BAT_THEME="base16"
 
-export CUDA_HOME="/usr/local/cuda"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-export LOCAL_BIN="$HOME/.local/bin"
-export TECTONIC_PATH="$HOME/.tectonic"
-export CHROME_BIN="brave-browser"
-export CARGO_PATH="$HOME/.cargo/bin"
-export PATH="$PATH:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN:$CUDA_HOME/bin"
-
-[ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
@@ -308,8 +297,7 @@ fpath+=~/.zfunc
 
 # !! Contents within this block are managed by juliaup !!
 
-path=('/home/$USER/.juliaup/bin' $path)
-export PATH
+export JULIAUP_PATH="$HOME/.juliaup/bin" 
 
 # <<< juliaup initialize <<<
 
@@ -319,4 +307,20 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 # Turso
-export PATH="/home/rubenjr0/.turso:$PATH"
+export TURSO_PATH="$HOME/.turso"
+
+[ -f "/home/rubenjr/.ghcup/env" ] && . "/home/rubenjr/.ghcup/env" # ghcup-env
+# bun completions
+[ -s "/home/rubenjr/.bun/_bun" ] && source "/home/rubenjr/.bun/_bun"
+
+export BUN_INSTALL="$HOME/.bun"
+export CUDA_HOME="/usr/local/cuda"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export LOCAL_BIN="$HOME/.local/bin"
+export TECTONIC_PATH="$HOME/.tectonic"
+export CHROME_BIN="brave-browser"
+export CARGO_PATH="$HOME/.cargo/bin"
+export DENO_INSTALL="/home/rubenjr/.deno"
+export COURSIER_PATH="$HOME/.local/share/coursier/bin"
+export PATH="$PATH:$JULIAUP_PATH:$DENO_INSTALL/bin:$COURSIER_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN:$CUDA_HOME/bin"
