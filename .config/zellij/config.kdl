@@ -199,13 +199,6 @@ plugins {
     }
 }
 
-ui {
-    pane_frames {
-        hide_session_name true
-        rounded_corners true
-    }
-}
-
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
 // Options:
@@ -235,7 +228,7 @@ simplified_ui true
 //   - true (default)
 //   - false
 //
-// pane_frames false
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -286,12 +279,12 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-mocha"
+theme "catppuccin-latte"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

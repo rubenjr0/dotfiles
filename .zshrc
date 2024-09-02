@@ -18,9 +18,6 @@ setopt HIST_IGNORE_ALL_DUPS
 # Input/output
 #
 
-# Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -e
-
 # Prompt for spelling correction of commands.
 #setopt CORRECT
 
@@ -35,7 +32,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # -----------------
 
 # Use degit instead of git as the default tool to install and update modules.
-#zstyle ':zim:zmodule' use 'degit'
+zstyle ':zim:zmodule' use 'degit'
 
 # --------------------
 # Module configuration
@@ -62,7 +59,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # Set a custom terminal title format using prompt expansion escape sequences.
 # See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
 # If none is provided, the default '%n@%m: %~' is used.
-#zstyle ':zim:termtitle' format '%1~'
+zstyle ':zim:termtitle' format '%1~'
 
 #
 # zsh-autosuggestions
@@ -74,7 +71,7 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 # Customize the style that the suggestions are shown with.
 # See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 #
 # zsh-syntax-highlighting
@@ -128,167 +125,22 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-# ZOXIDE
-# =============================================================================
-#
-# Utility functions for zoxide.
-#
 
-# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
-function __zoxide_pwd() {
-    \builtin pwd -L
-}
-
-# cd + custom logic based on the value of _ZO_ECHO.
-function __zoxide_cd() {
-    # shellcheck disable=SC2164
-    \builtin cd "$@"
-}
-
-# =============================================================================
-#
-# Hook configuration for zoxide.
-#
-
-# Hook to add new entries to the database.
-function __zoxide_hook() {
-    \command zoxide add -- "$(__zoxide_pwd || \builtin true)"
-}
-
-# Initialize hook.
-# shellcheck disable=SC2154
-if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
-    chpwd_functions+=(__zoxide_hook)
-fi
-
-# =============================================================================
-#
-# When using zoxide with --no-aliases, alias these internal functions as
-# desired.
-#
-
-__zoxide_z_prefix='c#'
-
-# Jump to a directory using only keywords.
-function __zoxide_z() {
-    # shellcheck disable=SC2199
-    if [[ "$#" -eq 0 ]]; then
-        __zoxide_cd ~
-    elif [[ "$#" -eq 1 ]] && [[ "$1" = '-' ]]; then
-        if [[ -n "${OLDPWD}" ]]; then
-            __zoxide_cd "${OLDPWD}"
-        else
-            # shellcheck disable=SC2016
-            \builtin printf 'zoxide: $OLDPWD is not set'
-            return 1
-        fi
-    elif [[ "$#" -eq 1 ]] && [[ -d "$1" ]]; then
-        __zoxide_cd "$1"
-    elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
-        # shellcheck disable=SC2124
-        \builtin local result="${@[-1]}"
-        __zoxide_cd "${result:${#__zoxide_z_prefix}}"
-    else
-        \builtin local result
-        result="$(\command zoxide query --exclude "$(__zoxide_pwd || \builtin true)" -- "$@")" &&
-            __zoxide_cd "${result}"
-    fi
-}
-
-# Jump to a directory using interactive search.
-function __zoxide_zi() {
-    \builtin local result
-    result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
-}
-
-# =============================================================================
-#
-# Convenient aliases for zoxide. Disable these using --no-aliases.
-#
-
-# Remove definitions.
-function __zoxide_unset() {
-    \builtin unalias "$@" &>/dev/null || \builtin true
-    \builtin unfunction "$@" &>/dev/null || \builtin true
-    \builtin unset "$@" &>/dev/null
-}
-
-__zoxide_unset c
-function c() {
-    __zoxide_z "$@"
-}
-
-__zoxide_unset ci
-function ci() {
-    __zoxide_zi "$@"
-}
-
-if [[ -o zle ]]; then
-    __zoxide_unset _c
-    function _c() {
-        # Only show completions when the cursor is at the end of the line.
-        # shellcheck disable=SC2154
-        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
-
-        if [[ "${#words[@]}" -eq 2 ]]; then
-            _files -/
-        elif [[ "${words[-1]}" == '' ]]; then
-            \builtin local result
-            # shellcheck disable=SC2086
-            if result="$(\command zoxide query -i -- ${words[2,-1]})"; then
-                __zoxide_result="${result}"
-            else
-                __zoxide_result=''
-            fi
-            \builtin printf '\e[5n'
-        fi
-    }
-
-    __zoxide_unset _c_helper
-    function _c_helper() {
-        \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
-        # shellcheck disable=SC2296
-        [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
-        \builtin zle reset-prompt
-    }
-
-    \builtin zle -N _c_helper
-    \builtin bindkey "\e[0n" _c_helper
-    if [[ "${+functions[compdef]}" -ne 0 ]]; then
-        \compdef -d c
-        \compdef _c c
-    fi
-fi
-# ZOXIDE END
-
-if type rg &> /dev/null; then
-	export FZF_DEFAULT_COMMAND='rg --files'
-	export FZF_DEFAULT_OPTS='-m --height 50% --border'
-fi
-
-eval "$(zoxide init zsh)"
-
-alias vim=nvim
-alias v=nvim
 alias doc=lazydocker
+alias lg=lazygit
 alias tec=tectonic -X
 alias typ=typst
 alias xc=xcompress
-alias ls='exa --group-directories-first'
-alias l='exa -l --group-directories-first --git'
+# alias ls='exa --group-directories-first'
+# alias l='exa -l --group-directories-first --git'
 alias la='exa -l --all --group-directories-first --git'
-alias lr='exa -R --group-directories-first --git'
+# alias lr='exa -R --group-directories-first --git'
 alias j=just
 alias py=python3
-alias z=zellij
-alias k=kalendar
+alias zel=zellij
 alias ff=fastfetch
 
 export BAT_THEME="base16"
-
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
 
 # opam configuration
 [[ ! -r /home/$USER/.opam/opam-init/init.zsh ]] || source /home/$USER/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
@@ -301,26 +153,17 @@ export JULIAUP_PATH="$HOME/.juliaup/bin"
 
 # <<< juliaup initialize <<<
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
-
 # Turso
 export TURSO_PATH="$HOME/.turso"
-
 [ -f "/home/rubenjr/.ghcup/env" ] && . "/home/rubenjr/.ghcup/env" # ghcup-env
-# bun completions
-[ -s "/home/rubenjr/.bun/_bun" ] && source "/home/rubenjr/.bun/_bun"
 
-export BUN_INSTALL="$HOME/.bun"
+export XDG_CONFIG_HOME="$HOME/.config/"
+export HOMEBREW_PATH="/home/linuxbrew/.linuxbrew/bin"
 export CUDA_HOME="/usr/local/cuda"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-export LOCAL_BIN="$HOME/.local/bin"
 export TECTONIC_PATH="$HOME/.tectonic"
-export CHROME_BIN="brave-browser"
 export CARGO_PATH="$HOME/.cargo/bin"
-export DENO_INSTALL="/home/rubenjr/.deno"
-export COURSIER_PATH="$HOME/.local/share/coursier/bin"
-export PATH="$PATH:$JULIAUP_PATH:$DENO_INSTALL/bin:$COURSIER_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO_PATH:$TECTONIC_PATH:$JAVA_HOME:$LOCAL_BIN:$CUDA_HOME/bin"
+export PATH="$PATH:$HOMEBREW_PATH:$JULIAUP_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO_PATH:$TECTONIC_PATH:$CUDA_HOME/bin"
+
+
+# eval "$(zoxide init zsh)"

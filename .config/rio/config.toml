@@ -1,5 +1,5 @@
 cursor = '|'
-theme = "catppuccin_mocha"
+theme = "catppuccin_latte"
 padding-x = 10
 
 [editor]
