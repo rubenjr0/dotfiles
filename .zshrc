@@ -158,12 +158,13 @@ export TURSO_PATH="$HOME/.turso"
 [ -f "/home/rubenjr/.ghcup/env" ] && . "/home/rubenjr/.ghcup/env" # ghcup-env
 
 export XDG_CONFIG_HOME="$HOME/.config/"
-export HOMEBREW_PATH="/home/linuxbrew/.linuxbrew/bin"
 export CUDA_HOME="/usr/local/cuda"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64"
 export TECTONIC_PATH="$HOME/.tectonic"
 export CARGO_PATH="$HOME/.cargo/bin"
-export PATH="$PATH:$HOMEBREW_PATH:$JULIAUP_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO_PATH:$TECTONIC_PATH:$CUDA_HOME/bin"
+export PATH="$PATH:$JULIAUP_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO_PATH:$TECTONIC_PATH:$CUDA_HOME/bin"
 
 
 # eval "$(zoxide init zsh)"
+
+. "$HOME/.cargo/env"

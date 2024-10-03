@@ -2,6 +2,26 @@
 name = "rust"
 auto-format = true
 
+[language.debugger]
+name = "lldb-vscode"
+transport = "stdio"
+command = "lldb-vscode-14"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [ "ruff" ]
+formatter = { command = "ruff", args = ["format", "-"] }
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
 [[language]]
 name = "haskell"
 auto-format = true
