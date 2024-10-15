@@ -11,6 +11,7 @@ preview-completion-insert = false
 completion-replace = true
 completion-trigger-len = 3
 
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
