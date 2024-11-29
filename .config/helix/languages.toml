@@ -29,12 +29,10 @@ formatter = { command = "fourmolu" }
 
 [[language]]
 name = "typst"
-scope = "source.typst"
-roots = []
-file-types = ["typst", "typ"]
-indent = { tab-width = 2, unit = "  " }
-comment-token = "//"
-injection-regex = "typ(st)?"
+language-servers = ["tinymist"]
+[language-server.tinymist]
+command = "tinymist"
+config = { exportPdf = "onType", outputPath = "$root/output/$dir/$name" }
 
 [language.auto-pairs]
 '(' = ')'
@@ -42,7 +40,3 @@ injection-regex = "typ(st)?"
 '[' = ']'
 '$' = '$'
 '"' = '"'
-
-[[grammar]]
-name = "typst"
-source = { path = "/home/rubenjr/.helix/typst_grammar/" }

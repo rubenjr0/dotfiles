@@ -170,7 +170,7 @@ export PATH="$PATH:$LOCAL_PATH:$JULIAUP_PATH:$TURSO_PATH:$BUN_INSTALL/bin:$CARGO
 
 . "$HOME/.cargo/env"
 
-logo_options=(pacbsd openstage trisquel darkos small)
+logo_options=(pacbsd openstage trisquel darkos small cosmic)
 size=${#logo_options[@]}
 index=$(($RANDOM % $size + 1))
 ff -c archey -l ${logo_options[$index]}
