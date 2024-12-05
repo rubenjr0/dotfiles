@@ -20,20 +20,6 @@ formatter = { command = "fourmolu" }
 
 
 [[language]]
-<<<<<<< HEAD
-name = "typst"
-language-servers = ["tinymist"]
-[language-server.tinymist]
-command = "tinymist"
-config = { exportPdf = "onType", outputPath = "$root/output/$dir/$name" }
-
-[language.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'$' = '$'
-'"' = '"'
-=======
 name = "typescript"
 language-id = "typescript"
 scope = "source.ts"
@@ -62,4 +48,3 @@ shebangs = ["deno"]
 roots = ["deno.json", "deno.jsonc", "package.json"]
 auto-format = true
 language-servers = ["deno-lsp"]
->>>>>>> 566c2da (laptop config)
