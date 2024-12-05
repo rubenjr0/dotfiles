@@ -2,16 +2,6 @@
 name = "rust"
 auto-format = true
 
-[language.debugger]
-name = "lldb-vscode"
-transport = "stdio"
-command = "lldb-vscode-14"
-
-[[language.debugger.templates]]
-name = "binary"
-request = "launch"
-completion = [ { name = "binary", completion = "filename" } ]
-args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
 
 [[language]]
 name = "python"
@@ -22,12 +12,15 @@ formatter = { command = "ruff", args = ["format", "-"] }
 command = "ruff"
 args = ["server"]
 
+
 [[language]]
 name = "haskell"
 auto-format = true
 formatter = { command = "fourmolu" }
 
+
 [[language]]
+<<<<<<< HEAD
 name = "typst"
 language-servers = ["tinymist"]
 [language-server.tinymist]
@@ -40,3 +33,33 @@ config = { exportPdf = "onType", outputPath = "$root/output/$dir/$name" }
 '[' = ']'
 '$' = '$'
 '"' = '"'
+=======
+name = "typescript"
+language-id = "typescript"
+scope = "source.ts"
+injection-regex = "^(ts|typescript)$"
+file-types = ["ts"]
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc", "package.json"]
+auto-format = true
+language-servers = ["deno-lsp"]
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+
+
+[[language]]
+name = "typescriptreact"
+language-id = "typescriptreact"
+scope = "source.tsx"
+injection-regex = "^(tsx|typescriptreact)$"
+file-types = ["tsx"]
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc", "package.json"]
+auto-format = true
+language-servers = ["deno-lsp"]
+>>>>>>> 566c2da (laptop config)

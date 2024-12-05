@@ -130,7 +130,7 @@ alias doc=lazydocker
 alias lg=lazygit
 alias tec=tectonic -X
 alias typ=typst
-alias xc=xcompress
+alias bds=birthdays
 # alias ls='exa --group-directories-first'
 # alias l='exa -l --group-directories-first --git'
 alias la='exa -l --all --group-directories-first --git'
@@ -174,3 +174,4 @@ logo_options=(pacbsd openstage trisquel darkos small cosmic)
 size=${#logo_options[@]}
 index=$(($RANDOM % $size + 1))
 ff -c archey -l ${logo_options[$index]}
+. "/home/rubenjr/.deno/env"
