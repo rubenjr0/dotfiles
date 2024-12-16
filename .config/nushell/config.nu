@@ -930,8 +930,9 @@ $env.config = {
 alias l = ls
 alias la = ls -a
 alias zel = zellij
+alias j = just
 
 # Sourcing
 source ~/.zoxide.nu
-source ~/.config/nushell/nu-themes/everforest.nu
+# source ~/.config/nushell/nu-themes/everforest.nu
 use ~/.cache/starship/init.nu
