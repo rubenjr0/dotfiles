@@ -1,39 +1,37 @@
-theme = "everblush"
+# theme = "rose_pine"
+theme = "base16_default"
 
 [editor]
 line-number = "relative"
+mouse = true
 bufferline = "always"
-rulers = [80, 120]
+rulers = [120]
 scrolloff = 8
 cursorline = true
 popup-border = "all"
 preview-completion-insert = false
-completion-replace = true
-completion-trigger-len = 3
-
-
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
-
-[editor.statusline]
-separator = "│"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
-left = ["spinner", "mode", "version-control"]
-center = ["file-name"]
-right = ["diagnostics", "position", "separator", "file-type"]
-
-[editor.soft-wrap]
-enable = true
+completion-replace = false
+end-of-line-diagnostics = "hint"
+cursor-shape.insert = "bar"
+inline-diagnostics.cursor-line = "error"
 
 [editor.file-picker]
 hidden = false
 
 [editor.indent-guides]
 render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = [ "spinner", "mode", "version-control" ]
+center = [ "file-name" ]
+right = [ "diagnostics", "position", "separator", "file-type" ]
 
 [editor.lsp]
 display-messages = true

@@ -1,50 +1,23 @@
 [[language]]
-name = "rust"
-auto-format = true
-
-
-[[language]]
 name = "python"
 auto-format = true
-language-servers = [ "ruff" ]
-formatter = { command = "ruff", args = ["format", "-"] }
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
 
 
 [[language]]
-name = "haskell"
+name = "typst"
+language-servers = ["tinymist"]
+formatter = { command = "typstyle" }
 auto-format = true
-formatter = { command = "fourmolu" }
+[language-server.tinymist]
+command = "tinymist"
+[language-server.tinymist.config]
+typstExtraArgs = ["main.typ"]
 
 
 [[language]]
-name = "typescript"
-language-id = "typescript"
-scope = "source.ts"
-injection-regex = "^(ts|typescript)$"
-file-types = ["ts"]
-shebangs = ["deno"]
-roots = ["deno.json", "deno.jsonc", "package.json"]
-auto-format = true
-language-servers = ["deno-lsp"]
-
-[language-server.deno-lsp]
-command = "deno"
-args = ["lsp"]
-
-[language-server.deno-lsp.config.deno]
-enable = true
-
-
-[[language]]
-name = "typescriptreact"
-language-id = "typescriptreact"
-scope = "source.tsx"
-injection-regex = "^(tsx|typescriptreact)$"
-file-types = ["tsx"]
-shebangs = ["deno"]
-roots = ["deno.json", "deno.jsonc", "package.json"]
-auto-format = true
-language-servers = ["deno-lsp"]
+name = "jinja"
+language-servers = ["jinja-lsp"]
+[language-server.jinja-lsp]
+command = "jinja-lsp"
+config = { templates = "./templates", backend = ["./src"], lang = "rust"}
+timeout = 5
