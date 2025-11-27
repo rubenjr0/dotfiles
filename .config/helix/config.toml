@@ -1,5 +1,4 @@
-# theme = "rose_pine"
-theme = "base16_default"
+theme = "flexi"
 
 [editor]
 line-number = "relative"
@@ -11,7 +10,7 @@ cursorline = true
 popup-border = "all"
 preview-completion-insert = false
 completion-replace = false
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
 cursor-shape.insert = "bar"
 inline-diagnostics.cursor-line = "error"
 

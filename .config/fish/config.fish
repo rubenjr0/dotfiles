@@ -5,8 +5,6 @@ if status is-interactive
     alias lt="eza -T --group-directories-first"
     alias ff="fastfetch"
 
-    fish_config theme choose flexoki-dark
-
     zoxide init fish | source
     starship init fish | source
     direnv hook fish | source

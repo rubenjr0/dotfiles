@@ -67,19 +67,19 @@
             "color": "#be9600"
           },
           "constructor": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "embedded": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "enum": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "function": {
             "color": "#e27c3e"
           },
           "function.builtin": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "hint": {
             "color": "#677575"
@@ -88,10 +88,10 @@
             "color": "#6eb12e"
           },
           "label": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "namespace": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "number": {
             "color": "#aa84e7"
@@ -100,13 +100,13 @@
             "color": "#98a7a8"
           },
           "predictive": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "preproc": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "primary": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "property": {
             "color": "#4d9cff"
@@ -127,25 +127,25 @@
             "color": "#20b2a4"
           },
           "string.escape": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "string.regex": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "string.special": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "string.special.symbol": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "tag": {
-            "color": "#f00"
+            "color": "#0ff"
           },
           "text": {
-            "color": "#ff0"
+            "color": "#0ff"
           },
           "text.literal": {
-            "color": "#f00"
+            "color": "#f0f"
           },
           "title": {
             "color": "#f00"
@@ -307,7 +307,7 @@
             "color": "#f00"
           },
           "text": {
-            "color": "#ff0"
+            "color": "#0ff"
           },
           "text.literal": {
             "color": "#f00"

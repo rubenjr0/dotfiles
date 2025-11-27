@@ -59,12 +59,12 @@
     },
     "enabled_in_text_threads": false
   },
-  "terminal": { "dock": "right" },
+  "terminal": { "dock": "bottom" },
   "soft_wrap": "editor_width",
   "theme": {
     "mode": "system",
     "light": "Flexoki Light",
-    "dark": "Helium"
+    "dark": "Flexoki Dark"
   },
   "languages": {
     "Typst": {
