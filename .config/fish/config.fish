@@ -3,7 +3,7 @@ if status is-interactive
 
     alias ls="eza --group-directories-first"
     alias lt="eza -T --group-directories-first"
-    alias ff="fastfetch"
+    alias ff="fastfetch --logo ghostfreak"
 
     zoxide init fish | source
     starship init fish | source

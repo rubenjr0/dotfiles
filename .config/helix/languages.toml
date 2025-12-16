@@ -11,7 +11,11 @@ auto-format = true
 [language-server.tinymist]
 command = "tinymist"
 [language-server.tinymist.config]
-typstExtraArgs = ["main.typ"]
+exportPdf = "onType"
+outputPath = "$root/$name"
+lint.enabled = true
+preview.background.enabled = true
+preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto", "--open"]
 
 
 [[language]]

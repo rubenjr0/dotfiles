@@ -1,23 +1,27 @@
 # theme = light:Monokai Pro Light,dark:Monokai Pro Spectrum
 # theme = light:Rose Pine Dawn,dark:Rose Pine
-theme = Flexi
+theme = light:Flexi Light,dark:Flexi
 
-font-family = FantasqueSansM Nerd Font
-window-title-font-family = FantasqueSansM Nerd Font
-font-size = 13
+
+font-family = Maple Mono
+window-title-font-family = Maple Mono
+font-size = 11
+
 
 window-padding-x = 16
 window-padding-y = 16
-window-subtitle = working-directory 
+window-subtitle = working-directory
 window-theme = ghostty
 window-decoration = client
+
 
 background-blur = true
 background-opacity = 0.94
 unfocused-split-opacity = 1
 
-# shell-integration = fish
+
 shell-integration-features = true
+
 
 keybind = unconsumed:ctrl+shift+r=reload_config
 keybind = ctrl+t=new_tab
@@ -28,53 +32,3 @@ keybind = ctrl+alt+l=new_split:left
 keybind = ctrl+alt+r=new_split:right
 keybind = ctrl+alt+left=previous_tab
 keybind = ctrl+alt+right=next_tab
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -19,37 +19,8 @@
   "ui_font_family": "Cal Sans UI",
   "buffer_font_family": "FantasqueSansM Nerd Font",
   "ui_font_size": 16.0,
-  "buffer_font_size": 16,
+  "buffer_font_size": 15.0,
   "base_keymap": "VSCode",
-  "agent": {
-    "inline_assistant_model": {
-      "provider": "ollama",
-      "model": "athena:latest"
-    },
-    "default_profile": "ask",
-    "model_parameters": [
-      {
-        "model": "athena:latest",
-        "temperature": 0.9
-      }
-    ],
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-3-pro-preview"
-    }
-  },
-  "language_models": {
-    "ollama": {
-      "available_models": [
-        {
-          "name": "athena:latest",
-          "max_tokens": 65536,
-          "display_name": "Athena",
-          "supports_tools": true
-        }
-      ]
-    }
-  },
   "icon_theme": "Material Icon Theme",
   "edit_predictions": {
     "mode": "subtle",
@@ -59,7 +30,7 @@
     },
     "enabled_in_text_threads": false
   },
-  "terminal": { "dock": "bottom" },
+  "terminal": { "dock": "right" },
   "soft_wrap": "editor_width",
   "theme": {
     "mode": "system",
