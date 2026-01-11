@@ -2,13 +2,16 @@
 protocol = "sparse"
 
 [build]
-rustflags = ["-Z", "threads=8"]
+rustflags = ["-Z", "threads=8", "-Z", "share-generics=y"]
 build-dir = "{cargo-cache-home}/build-dir"
 
 [unstable]
 codegen-backend = true
 
 [profile.dev]
+codegen-backend = "cranelift"
+
+[profile.test]
 codegen-backend = "cranelift"
 
 [target.x86_64-unknown-linux-gnu]

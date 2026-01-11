@@ -1,4 +1,9 @@
 [[language]]
+name = "rust"
+[language-server.rust-analyzer.cargo]
+targetDir = true
+
+[[language]]
 name = "python"
 auto-format = true
 
@@ -13,9 +18,10 @@ command = "tinymist"
 [language-server.tinymist.config]
 exportPdf = "onType"
 outputPath = "$root/$name"
+typstExtraArgs = ["main.typ"]
 lint.enabled = true
 preview.background.enabled = true
-preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=auto", "--open"]
+preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--partial-rendering=false", "--open"]
 
 
 [[language]]

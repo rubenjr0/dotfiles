@@ -13,48 +13,57 @@
       "delay_ms": 0,
       "padding": 7,
       "min_column": 0,
-      "show_commit_summary": false
-    }
+      "show_commit_summary": false,
+    },
   },
   "ui_font_family": "Cal Sans UI",
-  "buffer_font_family": "FantasqueSansM Nerd Font",
+  "buffer_font_family": "Maple Mono NF",
   "ui_font_size": 16.0,
-  "buffer_font_size": 15.0,
+  "buffer_font_size": 14.0,
   "base_keymap": "VSCode",
   "icon_theme": "Material Icon Theme",
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "terminal": { "dock": "right" },
   "soft_wrap": "editor_width",
   "theme": {
     "mode": "system",
     "light": "Flexoki Light",
-    "dark": "Flexoki Dark"
+    "dark": "Kanagawa Wave",
   },
   "languages": {
     "Typst": {
       "formatter": {
         "external": {
-          "command": "typstyle"
-        }
-      }
+          "command": "typstyle",
+        },
+      },
     },
     "Python": {
       "format_on_save": "on",
       "formatter": [
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
+            "name": "ruff",
+          },
+        },
       ],
-      "language_servers": ["uv", "ruff", "pyright"]
-    }
-  }
+      "language_servers": ["uv", "ruff", "pyright"],
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true,
+        },
+      },
+    },
+  },
 }
