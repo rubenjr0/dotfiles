@@ -96,6 +96,7 @@ cleanup = true
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 "SpacetimeDB" = "spacetime version upgrade"
 "Turso" = "turso_cli-update"
+"Sql Studio" = "sql-studio-update"
 
 
 [python]
