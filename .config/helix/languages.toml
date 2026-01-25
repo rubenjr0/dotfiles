@@ -25,6 +25,15 @@ preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors
 
 
 [[language]]
+name = "sql"
+language-servers = ["sqruff"]
+formatter = { command = "sqruff", args = ["fix", "-"] }
+auto-format = true
+[language-server.sqruff]
+command = "sqruff"
+args = ["lsp"]
+
+[[language]]
 name = "jinja"
 language-servers = ["jinja-lsp"]
 [language-server.jinja-lsp]

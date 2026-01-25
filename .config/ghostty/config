@@ -1,6 +1,6 @@
-# theme = light:Monokai Pro Light,dark:Monokai Pro Spectrum
 # theme = light:Flexi Light,dark:Flexi
-theme = Kanagawabones
+theme = light:Adwaita,dark:Adwaita Dark
+
 
 font-family = Maple Mono
 window-title-font-family = Maple Mono

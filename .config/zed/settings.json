@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_profile": "minimal",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "git": {
     "inline_blame": {
       "enabled": false,
@@ -16,8 +25,8 @@
       "show_commit_summary": false,
     },
   },
-  "ui_font_family": "Cal Sans UI",
-  "buffer_font_family": "Maple Mono NF",
+  "ui_font_family": "Lexend",
+  "buffer_font_family": "Maple Mono",
   "ui_font_size": 16.0,
   "buffer_font_size": 14.0,
   "base_keymap": "VSCode",
@@ -35,7 +44,7 @@
   "theme": {
     "mode": "system",
     "light": "Flexoki Light",
-    "dark": "Kanagawa Wave",
+    "dark": "Fleet Dark",
   },
   "languages": {
     "Typst": {
