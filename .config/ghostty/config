@@ -1,5 +1,6 @@
 # theme = light:Flexi Light,dark:Flexi
-theme = light:Adwaita,dark:Adwaita Dark
+# theme = light:Adwaita,dark:Adwaita Dark
+theme = Carbonfox
 
 
 font-family = Maple Mono

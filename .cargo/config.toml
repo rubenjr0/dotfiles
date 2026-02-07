@@ -1,6 +1,3 @@
-[registries.crates-io]
-protocol = "sparse"
-
 [build]
 rustflags = ["-Z", "threads=8", "-Z", "share-generics=y"]
 build-dir = "{cargo-cache-home}/build-dir"
