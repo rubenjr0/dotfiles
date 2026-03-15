@@ -1,5 +1,5 @@
 [build]
-rustflags = ["-Z", "threads=8", "-Z", "share-generics=y"]
+rustflags = ["-Zthreads=8", "-Zshare-generics=y"]
 build-dir = "{cargo-cache-home}/build-dir"
 
 [unstable]

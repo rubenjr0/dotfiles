@@ -1,7 +1,4 @@
-# theme = light:Flexi Light,dark:Flexi
-# theme = light:Adwaita,dark:Adwaita Dark
-theme = Carbonfox
-
+theme = Flexi
 
 font-family = Maple Mono
 window-title-font-family = Maple Mono
@@ -10,14 +7,16 @@ font-size = 11
 
 window-padding-x = 16
 window-padding-y = 16
+window-padding-color = extend
 window-subtitle = working-directory
 window-theme = ghostty
 window-decoration = server
 
 
-background-blur = true
-background-opacity = 0.96
+background-blur = false
+background-opacity = 0.92
 unfocused-split-opacity = 1
+background-opacity-cells = true
 
 
 shell-integration-features = true

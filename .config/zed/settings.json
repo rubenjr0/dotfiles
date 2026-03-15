@@ -11,10 +11,10 @@
     "default_profile": "minimal",
     "default_model": {
       "provider": "google",
-      "model": "gemini-3-flash-preview"
+      "model": "gemini-3-flash-preview",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git": {
     "inline_blame": {
@@ -42,9 +42,9 @@
   "terminal": { "dock": "right" },
   "soft_wrap": "editor_width",
   "theme": {
-    "mode": "system",
-    "light": "Flexoki Light",
-    "dark": "Carbonfox",
+    "mode": "dark",
+    "light": "Zedokai Light",
+    "dark": "Zedokai Darker (Filter Spectrum)",
   },
   "languages": {
     "Typst": {
@@ -63,10 +63,25 @@
           },
         },
       ],
-      "language_servers": ["uv", "ruff", "pyright"],
+      "language_servers": ["ty", "..."],
     },
   },
   "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
     "rust-analyzer": {
       "initialization_options": {
         "rust": {
