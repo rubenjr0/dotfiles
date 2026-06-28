@@ -1,8 +1,10 @@
-theme = Flexi
+theme = Aura
 
 font-family = Maple Mono
 window-title-font-family = Maple Mono
 font-size = 11
+cursor-style = block
+cursor-style-blink = false
 
 
 window-padding-x = 16
@@ -14,7 +16,7 @@ window-decoration = server
 
 
 background-blur = false
-background-opacity = 0.92
+background-opacity = 0.96
 unfocused-split-opacity = 1
 background-opacity-cells = true
 

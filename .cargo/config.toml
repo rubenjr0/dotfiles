@@ -1,5 +1,9 @@
 [build]
-rustflags = ["-Zthreads=8", "-Zshare-generics=y"]
+rustflags = [
+  "-Zthreads=8",
+  "-Zshare-generics=y",
+  "-Ctarget-cpu=native"
+]
 build-dir = "{cargo-cache-home}/build-dir"
 
 [unstable]
@@ -12,5 +16,8 @@ codegen-backend = "cranelift"
 codegen-backend = "cranelift"
 
 [target.x86_64-unknown-linux-gnu]
-linker = "clang"
-rustflags = ["-C", "link-arg=--ld-path=wild"]
+# linker = "clang" # Uncomment this line if your GCC is older than version 16.
+rustflags = ["-Clink-arg=-fuse-ld=wild"]
+ 
+# [target.'cfg(target_os = "linux")']
+# rustflags = ["-C", "link-arg=-fuse-ld=mold"]
