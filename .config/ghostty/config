@@ -1,4 +1,4 @@
-theme = Aura
+config-file = ?auto/theme.ghostty
 
 font-family = Maple Mono
 window-title-font-family = Maple Mono
